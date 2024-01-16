@@ -1,0 +1,41 @@
+### Obtener el recurso de movies
+GET http://localhost:1234/movies
+
+### Obtener una palicila por su id
+GET http://localhost:1234/movies/5ad1a235-0d9c-410a-b32b-220d91689a08
+
+### Filtrar por genero cin query string
+GET http://localhost:1234/movies?genre=Drama
+
+### Buscar una pelicula
+GET http://localhost:1234/movies?search=avengers
+
+
+###Crear una película
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "title": "Avengers 1",
+    "year": 2012,
+    "director": "Joss Whedon",
+    "duration": 142,
+    "poster": "https://i.ebayimg.com/images/g/pZUAAOSwEi5loBRQ/s-l1600.jpg",
+    "genre": [
+      "Sci-fi",
+      "Action"
+
+    ],
+    "rate": 8
+  }
+
+
+### Actualizar una pelicula por partes con patch
+PATCH http://localhost:1234/movies/5ad1a235-0d9c-410a-b32b-220d91689a08
+Content-Type: application/json
+
+{
+  "id": "68566456",
+  "year": 2008,
+  "duration":151
+}
